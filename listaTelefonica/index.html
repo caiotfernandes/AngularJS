@@ -4,7 +4,7 @@
         <title>Lista Telefonica</title>
         <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/app.css">
-        <link rel="stylesheet" type="text/css" href="css/alert.css">
+        <link rel="stylesheet" type="text/css" href="css/ui.css">
         
         <script src="lib/angular.js"></script>
         <script src="lib/angular-messages.js"></script>
@@ -25,8 +25,15 @@
     <body ng-controller="listaTelefonicaCtrl">
         <div class="jumbotron">
 
-            <ui-accordion title="Accordion"></ui-accordion>
-            <ui-accordion title="Accordion2"></ui-accordion>
+            <ui-accordions>
+                <ui-accordion title="Accordion">
+                    conteeeent
+                </ui-accordion>
+                <ui-accordion title="Accordion2">
+                    conteeeent
+                </ui-accordion>
+            </ui-accordions>
+            
             <hr/>
 
             <h3>{{app}}</h3>
