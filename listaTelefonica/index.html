@@ -14,13 +14,14 @@
         <script src="services/contatosAPIService.js"></script>
         <script src="services/operadorasAPIService.js"></script>
         <script src="value/configValue.js"></script>
-        <script src="services/serialGeneratorService.js"></script>
+        <script src="lib/serialGenerator/serialGeneratorService.js"></script>
         <script src="config/serialGeneratorConfig.js"></script>
         <script src="filters/nameFilter.js"></script>
         <script src="filters/ellipsisFilter.js"></script>
         <script src="js/directives/uiAlertDirective.js"></script>
         <script src="js/directives/uiDateDirective.js"></script>
-        <script src="js/directives/uiAccordionDirective.js"></script>
+        <script src="lib/ui/uiAccordionDirective.js"></script>
+        <script src="js/directives/uiTelephoneDirective.js"></script>
     </head>
     <body ng-controller="listaTelefonicaCtrl">
         <div class="jumbotron">
@@ -61,7 +62,7 @@
             <hr/>
             <form name="contatoForm">
                 <input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="9"/>
-                <input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="Telefone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/"/>
+                <input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="Telefone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/" ui-telephone/>
                 <input class="form-control" type="text" ng-model="contato.data" name="data" placeholder="Data" ui-date/>
                 <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome + ' ( ' + (operadora.preco | currency) +  ' )' for operadora in operadoras | orderBy: 'nome'">
                     <option value="">Selecione uma operadora</option>

@@ -1,4 +1,5 @@
-angular.module("listaTelefonica").provider("serialGenerator", function () {
+angular.module("serialGenerator", []);
+angular.module("serialGenerator").provider("serialGenerator", function () {
     var _length = 10;
     this.getLength = function () {
         return _length;
@@ -11,7 +12,7 @@ angular.module("listaTelefonica").provider("serialGenerator", function () {
             generate: function () {
                 var serial = "";
                 while(serial.length < _length) {
-                    serial += String.fromCharCode(Math.floor(Math.random() * 64) + 32);
+                    serial += Math.floor(Math.random() * 64);
                 }
                 return serial;
             }

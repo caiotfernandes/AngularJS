@@ -13,9 +13,9 @@ var operadoras = [
 ];
 
 var contatos = [
-  {id: 1, nome: "Bruno", telefone: "9999-2222", data: new Date(), operadora: operadoras[0], serial: "teste"},
-  {id: 2, nome: "Sandra", telefone: "9999-3333", data: new Date(), operadora: operadoras[1], serial: "teste"},
-  {id: 3, nome: "Mariana", telefone: "9999-9999", data: new Date(), operadora: operadoras[2], serial: "teste"}
+  {id: 1, nome: "Bruno", telefone: "9999-2222", data: new Date(), operadora: operadoras[0], serial: "1234567890"},
+  {id: 2, nome: "Sandra", telefone: "9999-3333", data: new Date(), operadora: operadoras[1], serial: "2345678912"},
+  {id: 3, nome: "Mariana", telefone: "9999-9999", data: new Date(), operadora: operadoras[2], serial: "3456789123"}
 ];
 
 
@@ -47,12 +47,12 @@ app.post('/contatos', function(req, res) {
 
 app.delete('/contatos/:id', function(req, res) {
 	contatos = contatos.filter( function (contato) {
-		if(contato.serial !== req.params) {
+		if(contato.serial !== req.params.id) {
 			return contato;
 		}
 	});
   
-  res.json(contatos);
+  res.json(req.params);
 });
 
 app.get('/operadoras', function(req, res) {
