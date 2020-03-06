@@ -47,7 +47,7 @@ app.post('/contatos', function(req, res) {
 
 app.delete('/contatos/:id', function(req, res) {
 	contatos = contatos.filter( function (contato) {
-		if(contato.serial !== req.params.id) {
+		if(contato.id != req.params.id) {
 			return contato;
 		}
 	});

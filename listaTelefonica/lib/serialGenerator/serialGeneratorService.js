@@ -1,6 +1,6 @@
 angular.module("serialGenerator", []);
 angular.module("serialGenerator").provider("serialGenerator", function () {
-    var _length = 10;
+    var _length = 5;
     this.getLength = function () {
         return _length;
     }
